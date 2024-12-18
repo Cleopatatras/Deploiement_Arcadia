@@ -1,0 +1,22 @@
+# Assure un format LF sur tous les fichiers texte
+* text=auto eol=lf
+
+# Scripts exécutables
+*.sh text eol=lf
+*.php text eol=lf
+*.js text eol=lf
+*.yaml text eol=lf
+
+# Binaires
+*.lock binary
+*.turtle binary
+# Binary files - do not modify line endings
+*.jpg binary
+*.png binary
+*.gif binary
+*.zip binary
+*.exe binary
+
+# Specific overrides for certain file types
+*.bat eol=crlf
+*.sh eol=lf
