@@ -24,3 +24,6 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 etc/ssl/certs/002c0b4f.0
+
+mongodb/journal
+mongodb/diagnostic.data
