@@ -1,0 +1,35 @@
+services:
+
+  php:
+    container_name: php
+    build:
+      context: .
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./apache/default-ssl.conf:/etc/apache2/sites-enabled/000-default-ssl.conf
+      - ./etc/ssl:/etc/ssl
+      - ./app:/var/www
+    depends_on:
+      - mongo
+
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'
+    ports:
+      - 1025:1025 #SMTP
+      - 8025:8025 #Boite mail
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./mongodb:/data/db
+    restart: always
