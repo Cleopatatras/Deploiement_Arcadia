@@ -1,6 +1,8 @@
 # Projet Docker Symfony
 
-Ce projet est une application Symfony intégrée dans un conteneur Docker. Il inclut tout ce qui est nécessaire pour lancer et exécuter l'application, sauf la base de données, qui doit être configurée séparément.
+Ce projet est une application Symfony intégrée dans un conteneur Docker. 
+Ce projet s'inscrit dans le cadre de ma formation de "Développeur Web et Web mobile"
+Il inclut tout ce qui est nécessaire pour lancer et exécuter l'application, sauf la base de données, qui doit être configurée séparément.
 
 Prérequis
 
@@ -43,7 +45,7 @@ Le script pour le remplissage des tables est en annexe.
 
 Accédez à l'application et créez un utilisateur via l'URL :
 
-http://<votre-domaine>/register
+http://<votre_domaine>/register
 
 Une fois l'utilisateur créé, modifiez son rôle directement dans la base de données pour qu'il devienne administrateur. Par exemple, pour une base de données MySQL :
 
@@ -53,15 +55,15 @@ Une fois l'utilisateur créé, modifiez son rôle directement dans la base de do
 
 Arrêter les conteneurs Docker :
 
-docker-compose down
+`docker-compose down`
 
 Voir les logs de l'application :
 
-docker-compose logs -f
+`docker-compose logs -f`
 
 Accéder au conteneur de l'application :
 
-docker-compose exec app bash
+``docker-compose exec app bash``
 
 ## Notes importantes
 
@@ -72,8 +74,11 @@ La connexion à la base de données doit être opérationnelle pour que l'applic
 Contribuer
 
 Les contributions sont les bienvenues ! Créez une pull request pour proposer vos modifications.
+
 ## Annexe : création des données:
-```INSERT INTO
+
+``` 
+INSERT INTO
     `habitats` (
         `id`,
         `nom`,
